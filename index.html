@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Materiais e orientações do minicurso de LLM e RAG. Acesse com seu e-mail institucional e crie uma cópia do notebook no Google Colab.">
+  <meta name="color-scheme" content="light">
+  <title>Minicurso de LLM e RAG | Materiais da aula</title>
+  <style>
+    :root { --ink: #142b3b; --muted: #486071; --blue: #1255cc; --line: #d8e2ea; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f6fa; color: var(--ink); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
+    a { color: var(--blue); text-underline-offset: 4px; }
+    a:focus-visible { outline: 3px solid #e99000; outline-offset: 5px; }
+    .wrap { max-width: 1040px; margin: auto; padding: 0 28px; }
+    header { padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .brand { font-weight: 800; letter-spacing: -.03em; }
+    .brand span { color: var(--blue); }
+    .hero { padding: 64px 0 36px; }
+    .eyebrow { color: var(--blue); font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 800px; font-size: clamp(2.2rem, 5.5vw, 3.8rem); line-height: 1.12; letter-spacing: -.045em; margin: 18px 0 24px; }
+    .lead { max-width: 700px; color: var(--muted); font-size: 1.15rem; }
+    .notice { padding: 20px 24px; background: #e8efff; border: 1px solid #bbcff7; border-left: 5px solid var(--blue); border-radius: 12px; margin: 28px 0; }
+    .notice p { margin: 5px 0 0; }
+    .button { display: inline-block; padding: 15px 25px; background: var(--blue); color: white; border-radius: 10px; font-weight: 750; text-decoration: none; }
+    .button:hover { background: #0b3f9e; }
+    .hint { color: var(--muted); font-size: .9rem; margin: 10px 0 0; }
+    section { margin-bottom: 44px; }
+    h2 { font-size: 1.7rem; letter-spacing: -.035em; line-height: 1.25; margin: 0 0 12px; }
+    .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 0; list-style: none; counter-reset: step; }
+    .steps li { counter-increment: step; background: white; border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .steps li::before { content: "0" counter(step); display: block; color: var(--blue); font-weight: 800; font-size: .9rem; margin-bottom: 12px; }
+    h3 { font-size: 1.1rem; margin: 0 0 8px; }
+    .steps p { color: var(--muted); margin: 0; }
+    .panel { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+    .panel ul { padding-left: 22px; margin-bottom: 0; }
+    .panel li { margin: 9px 0; }
+    .copy { font-weight: 750; color: var(--ink); }
+    details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    summary { cursor: pointer; font-weight: 700; }
+    details p { color: var(--muted); margin-bottom: 0; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 600px) { .wrap { padding: 0 20px; } .hero { padding-top: 38px; } .steps { grid-template-columns: 1fr; } .button { width: 100%; text-align: center; } }
+    @media print { body { background: white; } .hero { padding-top: 20px; } .steps li { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap brand">MINICURSO <span>/ LLM + RAG</span></div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="eyebrow">Materiais e orientações da aula</div>
+      <h1 id="titulo">Minicurso: Como uma IA encontra informações em documentos?</h1>
+      <p class="lead">Aprenda a conectar perguntas, busca semântica e modelos de linguagem. Aqui está o acesso aos arquivos necessários para acompanhar o minicurso no Google Colab.</p>
+      <div class="notice">
+        <strong>Acesso somente com e-mail institucional</strong>
+        <p>Entre no Google com a conta fornecida pela sua instituição antes de abrir a pasta. Contas pessoais não têm acesso aos materiais.</p>
+      </div>
+      <a class="button" href="https://drive.google.com/drive/folders/1_Vqe7KNQ3RwLhckSGH7PWdL99DE_Hyrp?usp=sharing" target="_blank" rel="noopener noreferrer">Acessar os materiais no Drive ↗</a>
+      <p class="hint">A pasta abre em uma nova aba. Todos os arquivos necessários estarão reunidos nela.</p>
+    </section>
+
+    <section aria-labelledby="comecar">
+      <h2 id="comecar">Antes de começar</h2>
+      <p>Use um computador com internet e siga estes quatro passos.</p>
+      <ol class="steps">
+        <li><h3>Entre com sua conta institucional</h3><p>Confira o e-mail no avatar do Google. Se estiver usando uma conta pessoal, troque para a conta institucional.</p></li>
+        <li><h3>Abra os materiais da aula</h3><p>Acesse a pasta pelo botão acima. Localize o notebook <strong>.ipynb</strong> e o PDF do Guia Acadêmico. Baixe o PDF para enviá-lo durante a atividade.</p></li>
+        <li><h3>Abra o notebook no Colab</h3><p>No Drive, use <strong>Abrir com → Google Colaboratory</strong>. Se essa opção não aparecer, baixe o arquivo .ipynb, abra o <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Google Colab (nova aba)</a> e escolha <strong>Arquivo → Fazer upload de notebook</strong>.</p></li>
+        <li><h3>Faça uma cópia para você</h3><p>No Colab, clique em <strong>Arquivo → Salvar uma cópia no Drive</strong>. Renomeie com seu nome e faça as atividades nessa cópia. <span class="copy">Cada estudante deve trabalhar no próprio notebook.</span></p></li>
+      </ol>
+    </section>
+
+    <section class="panel" aria-labelledby="executar">
+      <h2 id="executar">Durante a atividade</h2>
+      <ul>
+        <li>Clique em <strong>Conectar</strong> no Colab para iniciar a sessão.</li>
+        <li>Execute as células <strong>de cima para baixo</strong>, pelo botão ▶ à esquerda de cada bloco de código.</li>
+        <li>Aguarde a instalação das bibliotecas e o carregamento dos modelos. O primeiro uso pode levar alguns minutos.</li>
+        <li>Preencha os espaços indicados nas atividades. Na primeira passagem, evite usar <strong>Executar tudo</strong>.</li>
+        <li>Quando o notebook solicitar o upload, envie <strong>somente o PDF do Guia Acadêmico</strong>. O gabarito não deve entrar na busca do RAG.</li>
+        <li>Confira os trechos recuperados antes de avaliar a resposta da IA. Uma resposta convincente ainda pode estar errada.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="duvidas">
+      <h2 id="duvidas">Precisa de ajuda?</h2>
+      <details><summary>A pasta pediu permissão. O que fazer?</summary><p>Confira se você está usando o e-mail institucional. Se a conta estiver correta e o acesso continuar bloqueado, entre em contato com o professor ou responsável pelo minicurso para verificar sua autorização.</p></details>
+      <details><summary>Não consigo editar o notebook.</summary><p>O arquivo compartilhado é o material de referência. Abra-o no Colab e escolha <strong>Arquivo → Salvar uma cópia no Drive</strong>. Edite a cópia salva na sua conta institucional.</p></details>
+      <details><summary>A sessão reiniciou e apareceu “variável não definida”.</summary><p>A reinicialização apaga as variáveis da memória. Execute novamente as células desde o início, mantendo suas atividades preenchidas, e reenvie o PDF quando solicitado.</p></details>
+      <details><summary>Preciso instalar Python no computador?</summary><p>Não. O código deste minicurso é executado no Google Colab, pelo navegador. As bibliotecas são instaladas na sessão pela célula indicada no notebook.</p></details>
+    </section>
+  </main>
+  <footer><div class="wrap">Minicurso de LLM e RAG · Material educacional · Guia Acadêmico fictício</div></footer>
+</body>
+</html>
