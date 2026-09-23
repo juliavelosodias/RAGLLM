@@ -1,11 +1,4 @@
-# Publicar a página do minicurso
-
-1. Envie o arquivo `index.html` para a raiz do repositório escolhido no GitHub.
-2. Nas configurações do repositório, abra **Settings > Pages**.
-3. Configure a publicação pela branch que contém o arquivo, selecionando a pasta raiz (`/root`).
-4. Salve e aguarde a publicação. O endereço da página será informado nessa mesma tela.
-
-A página é estática e não precisa de instalação, compilação ou dependências externas.
+# Minicurso: Como uma IA encontra informações em documentos?
 
 ## Acesso institucional aos materiais
 
